@@ -1,0 +1,20 @@
+skills:
+  - id: hand_hygiene
+    title: Hand Hygiene (Hand Washing)
+    category: Infection Control
+    estimatedTime: 150
+    description: Proper hand washing technique
+    suppliesNeeded:
+      - Soap
+      - Sink
+      - Paper towels
+    steps:
+      - id: step_1
+        description: Turns on water at sink
+        critical: false
+      - id: step_2
+        description: Lathers all surfaces of wrists, hands, and fingers producing friction for at least 20 seconds
+        critical: true
+      - id: step_3
+        description: Rinses all surfaces of wrists, hands, and fingers thoroughly
+        critical: true

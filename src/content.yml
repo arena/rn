@@ -1,0 +1,88 @@
+app:
+  name: "RN Skills Practice"
+  taglines:
+    browser: "Your nursing school clinical skills reference and practice tool"
+    about: "Practice and master your nursing skills"
+
+navigation:
+  skills: "Skills"
+  about: "About"
+
+browser:
+  organize_by: "Sort by"
+  by_number: "Number"
+  by_type: "Category"
+  by_length: "Length"
+  steps_text: "steps"
+  steps_heading: "Steps"
+  critical_text: "Critical"
+  done_text: "Done"
+  skip_text: "Skip"
+  miss_text: "Miss"
+  practice_button: "Start Practice"
+  finish_practice: "Finish Practice"
+  stop_practice: "Stop Practice"
+  close_practice: "Close"
+  try_again: "Try Again"
+  practice_complete: "Practice Complete!"
+  practice_complete_time: "Time taken"
+  critical_failures: "Critical failures detected"
+  missed_steps: "Steps to review"
+  skills_count: "skills"
+
+categories:
+  infection_control:
+    title: "Infection Control"
+    description: "Hand hygiene, PPE, and safety procedures"
+  vital_signs:
+    title: "Vital Signs"
+    description: "Assessment and measurement skills"
+  personal_care:
+    title: "Personal Care"
+    description: "Hygiene and comfort skills"
+  mobility:
+    title: "Mobility & Movement"
+    description: "Movement, positioning, and transfer skills"
+  medication:
+    title: "Medication Administration"
+    description: "Safe medication practices"
+  assessment:
+    title: "Assessment"
+    description: "Patient assessment skills"
+
+about:
+  title: "About RN Skills Practice"
+  sections:
+    who:
+      title: "Who is this for?"
+      text: "This app is designed for nursing students to practice clinical skills. Use it to study, review, and master the techniques you'll need in clinical settings."
+      share_prompt: "Know someone in nursing school?"
+
+    why:
+      title: "Why this app exists"
+      text: "This tool helps you focus on practicing skills without hunting for checklists or timing yourself manually."
+
+    usage:
+      title: "How to use this app"
+      items:
+        - title: "Browse skills"
+          description: "View all available nursing skills with step-by-step instructions"
+        - title: "Practice with peers"
+          description: "Use the evaluation buttons to mark steps as you practice with classmates"
+        - title: "Track progress"
+          description: "Use the practice timer to see how long each skill takes and identify missed steps"
+
+    disclaimer:
+      title: "Important Disclaimer"
+      text: "This app is for study purposes only. Always follow your nursing program's curriculum, clinical instructor guidance, and evidence-based practice standards. Content may not reflect your specific program requirements."
+
+    footer:
+      text: "Good luck in nursing school"
+
+share:
+  app:
+    title: "RN Skills Practice"
+    description: "Free practice tool for nursing students"
+
+links:
+  github: ""
