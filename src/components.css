@@ -12,7 +12,7 @@
 
 /* ===== MAIN BACKGROUND ===== */
 body {
-  background: linear-gradient(to bottom, #6B78DB, #704FA0);
+  background: linear-gradient(to bottom, #0d4f4a 0%, #1a7a6e 35%, #2a9d8f 65%, #40b4a0 100%);
   min-height: 100vh;
 }
 

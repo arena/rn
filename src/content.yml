@@ -1,5 +1,5 @@
 app:
-  name: "RN Skills Practice"
+  name: "RN Friend"
   taglines:
     browser: "Your nursing school clinical skills reference and practice tool"
     about: "Practice and master your nursing skills"
@@ -51,7 +51,7 @@ categories:
     description: "Patient assessment skills"
 
 about:
-  title: "About RN Skills Practice"
+  title: "About RN Friend"
   sections:
     who:
       title: "Who is this for?"
@@ -81,7 +81,7 @@ about:
 
 share:
   app:
-    title: "RN Skills Practice"
+    title: "RN Friend"
     description: "Free practice tool for nursing students"
 
 links:
