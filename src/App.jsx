@@ -1,12 +1,12 @@
 import React from 'react';
 import SkillsBrowserView from './components/SkillsBrowserView';
 import AboutView from './components/AboutView';
-import skillsData from './data/skills.yml';
+import skillsData from './data/skills/index.js';
 import contentData from './content.yml';
 import { getSkillTypeIcon, getSkillCategoryIcon, getSkillTypeLabel } from './utils/iconUtils.jsx';
 import { organizeSkillsByType } from './utils/skillUtils.js';
 import { formatDuration } from './utils/timeUtils.js';
-import { useStepEvaluation } from './hooks/useStepEvaluation.js';
+import { usePracticeStepEvaluation } from './hooks/useStepEvaluation.js';
 import { usePracticeTimer } from './hooks/useTimer.js';
 import './App.css';
 import './components.css';
@@ -24,7 +24,7 @@ const RNSkillsApp = () => {
     const { practiceTime, isPracticeRunning, practiceCompleted, startPractice, resetPractice, stopPractice,
             completePractice, setIsPracticeRunning } = usePracticeTimer();
     const { practiceStepEvaluations, handlePracticeStepEvaluation, getPracticeStepEvaluation,
-            getPracticeMissedSteps, resetPracticeEvaluations } = useStepEvaluation();
+            getPracticeMissedSteps, resetPracticeEvaluations } = usePracticeStepEvaluation();
 
     // Practice mode functions
     const startPracticeMode = (skillId) => {
@@ -90,14 +90,14 @@ const RNSkillsApp = () => {
                     >
                         {contentData.navigation.skills}
                     </button>
-                    <button
+                    {/* <button
                         onClick={() => setCurrentView('about')}
                         className={`tab-button ${
                             currentView === 'about' ? 'active' : 'inactive'
                         }`}
                     >
                         {contentData.navigation.about}
-                    </button>
+                    </button> */}
                 </div>
 
                 {/* View-specific Header Content */}

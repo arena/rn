@@ -362,7 +362,7 @@ const SkillsBrowserView = ({
 
     return (
         <>
-            {/* Organization Controls */}
+            {/* Organization Controls - commented out, sort is breaking the app
             <div className="organization-controls">
                 <span className="organization-label">{contentData.browser.organize_by}:</span>
                 <div className="nav-button-container">
@@ -397,6 +397,7 @@ const SkillsBrowserView = ({
                     </button>
                 </div>
             </div>
+            */}
 
             {/* Skills Display */}
             {skillsOrganization === 'number' ? (

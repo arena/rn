@@ -1,0 +1,17 @@
+id: head_to_toe_assessment
+title: Head-to-Toe Assessment
+category: Assessment
+estimatedTime: 900
+description: Systematic physical assessment from head to toe
+suppliesNeeded:
+  - Stethoscope
+  - Penlight
+  - Wrist watch (with second hand)
+  - Cotton swab
+  - Tongue depressor
+  - Pen/pencil and documentation from
+
+steps:
+  - id: step_1
+    description: "Perform hand hygiene"
+    critical: false
