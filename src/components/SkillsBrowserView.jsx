@@ -41,6 +41,15 @@ const SkillsBrowserView = ({
     const renderSkillCard = (skill, inCategory = false, index = 0) => {
         const isInPractice = practiceMode === skill.id;
         const isExpanded = expandedSkill === skill.id;
+
+        // Precompute per-section step numbers (resets to 1 after each section header)
+        let sectionCounter = 0;
+        const sectionStepNumbers = skill.steps.map((s) => {
+            if (s.section) { sectionCounter = 0; return null; }
+            if (s.tip) { return null; }
+            sectionCounter++;
+            return sectionCounter;
+        });
         
         return (
             <div key={skill.id} data-skill-id={skill.id} className="skill-card">
@@ -146,6 +155,20 @@ const SkillsBrowserView = ({
                         </div>
                         <div className="space-y-2">
                             {skill.steps.map((step, stepIndex) => {
+                                // Handle section headers
+                                if (step.section) {
+                                    return (
+                                        <div
+                                            key={stepIndex}
+                                            className={`${stepIndex > 0 ? 'mt-4' : ''} pb-1 border-b-2 border-teal-600`}
+                                        >
+                                            <h5 className="text-sm font-bold text-teal-800 uppercase tracking-wide">
+                                                {step.description}
+                                            </h5>
+                                        </div>
+                                    );
+                                }
+
                                 // Handle tips differently
                                 if (step.tip) {
                                     return (
@@ -194,7 +217,7 @@ const SkillsBrowserView = ({
                                                                 : 'critical-step-number-default'
                                                     : 'bg-gray-100 text-gray-700'
                                             }`}>
-                                                {stepIndex + 1}
+                                                {sectionStepNumbers[stepIndex]}
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <p className={`text-sm ${

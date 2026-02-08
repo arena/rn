@@ -1,7 +1,7 @@
 id: head_to_toe_assessment
 title: Head-to-Toe Assessment
 category: Assessment
-estimatedTime: 1200
+estimatedTime: 1800
 description: Systematic physical assessment from head to toe
 suppliesNeeded:
   - Stethoscope
@@ -9,13 +9,290 @@ suppliesNeeded:
   - Wrist watch (with second hand)
   - Cotton swab
   - Tongue depressor
-  - Pen/pencil and documentation from
+  - Pen/pencil and documentation form
   - Gloves (2 pairs)
   - Hand sanitizer
 
 steps:
-  - id: step_1
-    description: "Perform hand hygiene"
+  # ===== GENERAL =====
+  - id: section_general
+    description: "General"
+    section: true
+
+  - id: hand_hygiene_entry
+    description: "Perform hand hygiene: wash hands or foam-in"
+    critical: true
+
+  - id: tip_timer
+    description: "The timer starts after hand hygiene is complete"
+    tip: true
+
+  - id: introduce_self
+    description: "Introduce self"
     critical: false
 
+  - id: identify_patient
+    description: "Identify the patient using 2 identifiers"
+    critical: true
 
+  - id: consent
+    description: "\"I'm planning to perform a head-to-toe assessment on you. It can take up to 30 minutes. Is that ok with you?\""
+    critical: false
+
+  - id: privacy
+    description: "Provide privacy"
+    critical: false
+
+  - id: comfortable_position
+    description: "Assist the patient to a comfortable position"
+    critical: false
+
+  - id: raise_bed
+    description: "Raise the bed to an appropriate working height, ensure safety measures are in place (bed rails up)"
+    critical: false
+
+  # ===== ALERT & ORIENTED =====
+  - id: section_alert_oriented
+    description: "Alert & Oriented"
+    section: true
+
+  - id: ao_person
+    description: "Person: \"Please tell me who you are?\""
+    critical: false
+
+  - id: ao_place
+    description: "Place: \"Tell me where you are?\""
+    critical: false
+
+  - id: ao_time
+    description: "Time: \"What year is it currently?\""
+    critical: false
+
+  - id: ao_situation
+    description: "Situation: \"Why are you in the hospital?\""
+    critical: false
+
+  # ===== PAIN =====
+  - id: section_pain
+    description: "Pain"
+    section: true
+
+  - id: pain_ask
+    description: "\"Are you experiencing any pain or discomfort?\""
+    critical: false
+
+  - id: pain_provocation
+    description: "P (Provocation): What brought on this pain? Does anything make it feel better?"
+    critical: false
+
+  - id: pain_quality
+    description: "Q (Quality): What is the pain like? (stabbing, dull, burning, ...?)"
+    critical: false
+
+  - id: pain_region
+    description: "R (Region/Radiation): Where is the pain? Does the pain radiate to anywhere else on your body?"
+    critical: false
+
+  - id: pain_severity
+    description: "S (Severity): What is the severity on a scale from 0 to 10, where 10 is the worst pain you can imagine and 0 is no pain at all?"
+    critical: false
+
+  - id: pain_timing
+    description: "T (Timing): When did the pain begin?"
+    critical: false
+
+  # ===== HEAD AND FACE / NEUROLOGICAL =====
+  - id: section_head_face
+    description: "Head and Face / Neurological"
+    section: true
+
+  - id: perrla
+    description: "Pupils of the eyes - PERRLA: P (pupil size), E (evenness), R (roundness), R (reaction to light), L, A (accommodating)"
+    critical: false
+
+  - id: cardinal_fields
+    description: "Cardinal fields (six) and convergence (far to close)"
+    critical: false
+
+  - id: face_symmetry
+    description: "Face symmetry: smile, frown, raise eyebrows, puff out cheeks"
+    critical: false
+
+  - id: masseter_strength
+    description: "Masseter muscle strength: relax, clench teeth"
+    critical: false
+
+  - id: face_sensation
+    description: "Sensation on face"
+    critical: false
+
+  - id: shoulder_shrug
+    description: "Shoulder shrug against resistance"
+    critical: false
+
+  # ===== MOUTH AND THROAT / NEUROLOGICAL =====
+  - id: section_mouth_throat
+    description: "Mouth and Throat / Neurological"
+    section: true
+
+  - id: penlight_oral
+    description: "Assess with penlight: buccal mucosa, teeth and gums, tongue, floor of mouth, palate, uvula"
+    critical: false
+
+  - id: tongue_resistance
+    description: "Ask the patient to stick tongue out and move side to side against resistance (CN XII)"
+    critical: false
+
+  - id: uvula_rise_fall
+    description: "Ask the patient to open mouth and say \"ah\" and assess for uvula rise and fall (CN IX, X)"
+    critical: false
+
+  - id: gag_reflex
+    description: "Assess gag reflex (CN IX, X)"
+    critical: false
+
+  - id: mouth_probing_questions
+    description: "Ask at least 2 probing questions (e.g., Do you wear dentures? Do you have difficulty chewing or swallowing? Do you have pain, sores, bleeding?)"
+    critical: false
+
+  # ===== CHEST =====
+  - id: section_chest
+    description: "Chest, Posterior, Anterior, and Lateral"
+    section: true
+
+  - id: chest_inspect
+    description: "Assess the anterior/posterior chest for symmetry, skin, and respiratory effort (Respiratory distress? Use of accessory muscles?)"
+    critical: false
+
+  - id: breath_sounds
+    description: "Auscultate breath sounds for full inspiration and expiration, comparing side to side in a LADDER formation, upper, middle, and lower lung fields. Demonstrates auscultation of all 18 areas posterior and 10 areas anterior. Note any adventitious sounds."
+    critical: false
+
+  - id: chest_probing_question
+    description: "Ask a probing question (e.g., Do you have a history of breathing problems? Changes in your breathing pattern? Difficulty breathing when lying down? Do you have a cough?)"
+    critical: false
+
+  # ===== HEART AND CAROTID =====
+  - id: section_heart
+    description: "Heart and Carotid"
+    section: true
+
+  - id: carotid_palpate
+    description: "Palpate carotid arteries one at a time, comparing strength"
+    critical: false
+
+  - id: heart_sounds
+    description: "Auscultate heart sounds with the diaphragm of the stethoscope following APETM, then assess with the bell. Verbalize the names of the landmarks and which specific valve as you listen."
+    critical: false
+
+  - id: apical_pulse
+    description: "Auscultate the apical pulse rate at the mitral location while palpating the radial pulse. Perform this for a full minute, note any pulse deficit."
+    critical: false
+
+  - id: heart_probing_question
+    description: "Ask a probing question (e.g., Have you been experiencing shortness of breath with exertion? Any chest pain? Are you easily fatigued?)"
+    critical: false
+
+  # ===== UPPER EXTREMITIES =====
+  - id: section_upper_ext
+    description: "Upper Extremities"
+    section: true
+
+  - id: upper_hands_nails
+    description: "Inspect hands and nails checking capillary refill (Time? Pink? Warm? Clubbing?)"
+    critical: false
+
+  - id: upper_muscle_strength
+    description: "Assess bilateral, equal muscle strength of hands via grips, push/pull arms against resistance"
+    critical: false
+
+  - id: skin_turgor
+    description: "Assess skin turgor"
+    critical: false
+
+  - id: upper_temp_edema
+    description: "Assess the temperature of arms (using back of hand) and check for edema"
+    critical: false
+
+  - id: radial_pulse
+    description: "Compare strength of radial pulse, palpating bilaterally at the same time"
+    critical: false
+
+  - id: upper_rom
+    description: "Ask the client to demonstrate active ROM (Ask a probing question, e.g., Does this cause pain? Are you experiencing stiffness?)"
+    critical: false
+
+  # ===== ABDOMEN =====
+  - id: section_abdomen
+    description: "Abdomen"
+    section: true
+
+  - id: supine_position
+    description: "Place patient in supine position when possible"
+    critical: false
+
+  - id: abdomen_inspect
+    description: "Inspect contour, symmetry, skin characteristics, from two angles. Note and ask about any scars. (Is the abdomen distended, concave, flat?)"
+    critical: false
+
+  - id: bowel_sounds
+    description: "Auscultate bowel sounds in all quadrants (NORMO, HYPO, HYPER-ACTIVE)"
+    critical: false
+
+  - id: abdomen_palpate
+    description: "Palpate lightly all 4 quadrants asking about pain or tenderness, note any lumps or bumps, soft or firm abdomen"
+    critical: false
+
+  - id: bowel_pattern
+    description: "Ask about bowel pattern: last bowel movement, description, frequency"
+    critical: false
+
+  - id: urination
+    description: "Ask about urination: description, painful, frequency"
+    critical: false
+
+  # ===== LOWER EXTREMITIES =====
+  - id: section_lower_ext
+    description: "Lower Extremities"
+    section: true
+
+  - id: lower_skin_inspect
+    description: "Inspect skin characteristics, edema, and hair distribution on legs"
+    critical: false
+
+  - id: lower_toes_nails
+    description: "Examine toes and nails checking capillary refill (Time? Pink? Warm?)"
+    critical: false
+
+  - id: dorsalis_pedis
+    description: "Compare strength of dorsalis pedis pulse, palpating bilaterally at the same time"
+    critical: false
+
+  - id: lower_muscle_strength
+    description: "Assess bilateral, equal muscle strength with push-pulls to feet and legs bilaterally"
+    critical: false
+
+  - id: lower_rom
+    description: "Ask the client to show active ROM (Ask a probing question, e.g., Does this cause pain? Are you experiencing stiffness?)"
+    critical: false
+
+  # ===== POST ASSESSMENT CARE =====
+  - id: section_post
+    description: "Post Assessment Care"
+    section: true
+
+  - id: anything_else
+    description: "Ask the patient if anything else is needed"
+    critical: false
+
+  - id: plan_of_care
+    description: "Provide an update on the plan of care to the patient prior to leaving the room"
+    critical: false
+
+  - id: safety_measures
+    description: "Provide safety by placing the bed in lowest position, side rails up, and call light in reach"
+    critical: false
+
+  - id: hand_hygiene_exit
+    description: "Demonstrate hand hygiene when exiting the room"
+    critical: true
