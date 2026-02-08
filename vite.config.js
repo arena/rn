@@ -5,5 +5,5 @@ import yaml from '@rollup/plugin-yaml'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), yaml()],
-  base: '/',
+  base: '/rn/',
 })
