@@ -345,5 +345,7 @@ steps:
     critical: true
 
   - id: hand_hygiene_exit
-    description: "Demonstrate **hand hygiene** when exiting the room"
+    description: "
+    
+  Demonstrate **hand hygiene** when exiting the room"
     critical: true

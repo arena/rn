@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Check if any .yml files in the skills directory are staged
+STAGED_YML=$(git diff --cached --name-only --diff-filter=ACM | grep 'src/data/skills/.*\.yml$')
+
+if [ -n "$STAGED_YML" ]; then
+    echo "Skill YML files changed — running validation..."
+    node scripts/validate-skills.js
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo "Commit blocked: fix the skill YML errors above."
+        exit 1
+    fi
+fi
