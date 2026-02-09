@@ -37,7 +37,17 @@ const SkillsBrowserView = ({
     formatDuration,
     setIsPracticeRunning
 }) => {
-    
+
+    // Renders text with **bold** markdown support
+    const formatText = (text) => {
+        const parts = text.split(/(\*\*.*?\*\*)/g);
+        return parts.map((part, i) =>
+            part.startsWith('**') && part.endsWith('**')
+                ? <strong key={i}>{part.slice(2, -2)}</strong>
+                : part
+        );
+    };
+
     const renderSkillCard = (skill, inCategory = false, index = 0) => {
         const isInPractice = practiceMode === skill.id;
         const isExpanded = expandedSkill === skill.id;
@@ -181,7 +191,7 @@ const SkillsBrowserView = ({
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-sm text-blue-800 font-medium leading-relaxed">
-                                                    <span className="font-bold">Tip:</span> {step.description}
+                                                    <span className="font-bold">Tip:</span> {formatText(step.description)}
                                                 </p>
                                             </div>
                                         </div>
@@ -206,19 +216,21 @@ const SkillsBrowserView = ({
                                         }`}
                                     >
                                         <div className="flex items-start gap-3 flex-1 min-w-0">
-                                            <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold flex-shrink-0 ${
-                                                step.critical 
-                                                    ? evaluation === 'good'
-                                                        ? 'bg-green-100 text-green-800'
-                                                        : evaluation === 'skipped'
-                                                            ? 'bg-yellow-100 text-yellow-800'
-                                                            : evaluation === 'wrong'
-                                                                ? 'bg-red-100 text-red-800'
-                                                                : 'critical-step-number-default'
-                                                    : 'bg-gray-100 text-gray-700'
-                                            }`}>
-                                                {sectionStepNumbers[stepIndex]}
-                                            </div>
+                                            {skill.showStepNumbers !== false && (
+                                                <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold flex-shrink-0 ${
+                                                    step.critical
+                                                        ? evaluation === 'good'
+                                                            ? 'bg-green-100 text-green-800'
+                                                            : evaluation === 'skipped'
+                                                                ? 'bg-yellow-100 text-yellow-800'
+                                                                : evaluation === 'wrong'
+                                                                    ? 'bg-red-100 text-red-800'
+                                                                    : 'critical-step-number-default'
+                                                        : 'bg-gray-100 text-gray-700'
+                                                }`}>
+                                                    {sectionStepNumbers[stepIndex]}
+                                                </div>
+                                            )}
                                             <div className="flex-1 min-w-0">
                                                 <p className={`text-sm ${
                                                     step.critical 
@@ -231,7 +243,7 @@ const SkillsBrowserView = ({
                                                                     : 'text-gray-800 font-bold'
                                                         : 'text-gray-800'
                                                 } leading-relaxed`}>
-                                                    {step.description}
+                                                    {formatText(step.description)}
                                                 </p>
                                                 {step.critical && (
                                                     <div className="flex items-center gap-1 mt-2">
