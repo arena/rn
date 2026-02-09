@@ -1,5 +1,9 @@
 #!/bin/sh
 
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # Check if any .yml files in the skills directory are staged
 STAGED_YML=$(git diff --cached --name-only --diff-filter=ACM | grep 'src/data/skills/.*\.yml$')
 
@@ -8,7 +12,9 @@ if [ -n "$STAGED_YML" ]; then
     node scripts/validate-skills.js
     if [ $? -ne 0 ]; then
         echo ""
-        echo "Commit blocked: fix the skill YML errors above."
+        printf "${RED}Commit blocked: fix the skill YML errors above.${NC}\n"
         exit 1
+    else
+        printf "${GREEN}Skill validation passed.${NC}\n"
     fi
 fi

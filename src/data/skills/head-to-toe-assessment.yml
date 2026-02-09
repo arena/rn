@@ -217,24 +217,52 @@ steps:
     description: "Listen for **S1** (\"lub\") — mitral/tricuspid valves closing (systole), loudest at apex. **S2** (\"dub\") — aortic/pulmonic valves closing (diastole), loudest at base. Note rhythm, rate, and any extra sounds (S3, S4, murmurs)."
     tip: true
 
-  - id: heart_aortic
-    description: "**A** - Auscultate **Aortic** valve (2nd intercostal space, right sternal border) with diaphragm, then bell. Verbalize landmark and valve."
+  - id: tip_diaphragm_pass
+    description: "First pass: use the **diaphragm** of the stethoscope through all APETM landmarks"
+    tip: true
+
+  - id: diaphragm_aortic
+    description: "**A** - **Aortic** valve (2nd intercostal space, right sternal border) — diaphragm"
     critical: false
 
-  - id: heart_pulmonic
-    description: "**P** - Auscultate **Pulmonic** valve (2nd intercostal space, left sternal border) with diaphragm, then bell. Verbalize landmark and valve."
+  - id: diaphragm_pulmonic
+    description: "**P** - **Pulmonic** valve (2nd intercostal space, left sternal border) — diaphragm"
     critical: false
 
-  - id: heart_erbs
-    description: "**E** - Auscultate **Erb's point** (3rd intercostal space, left sternal border) with diaphragm, then bell. Verbalize landmark and valve."
+  - id: diaphragm_erbs
+    description: "**E** - **Erb's point** (3rd intercostal space, left sternal border) — diaphragm"
     critical: false
 
-  - id: heart_tricuspid
-    description: "**T** - Auscultate **Tricuspid** valve (4th intercostal space, left sternal border) with diaphragm, then bell. Verbalize landmark and valve."
+  - id: diaphragm_tricuspid
+    description: "**T** - **Tricuspid** valve (4th intercostal space, left sternal border) — diaphragm"
     critical: false
 
-  - id: heart_mitral
-    description: "**M** - Auscultate **Mitral** valve (5th intercostal space, midclavicular line) with diaphragm, then bell. Verbalize landmark and valve."
+  - id: diaphragm_mitral
+    description: "**M** - **Mitral** valve (5th intercostal space, midclavicular line) — diaphragm"
+    critical: false
+
+  - id: tip_bell_pass
+    description: "Second pass: switch to the **bell** of the stethoscope through all APETM landmarks"
+    tip: true
+
+  - id: bell_aortic
+    description: "**A** - **Aortic** valve (2nd intercostal space, right sternal border) — bell"
+    critical: false
+
+  - id: bell_pulmonic
+    description: "**P** - **Pulmonic** valve (2nd intercostal space, left sternal border) — bell"
+    critical: false
+
+  - id: bell_erbs
+    description: "**E** - **Erb's point** (3rd intercostal space, left sternal border) — bell"
+    critical: false
+
+  - id: bell_tricuspid
+    description: "**T** - **Tricuspid** valve (4th intercostal space, left sternal border) — bell"
+    critical: false
+
+  - id: bell_mitral
+    description: "**M** - **Mitral** valve (5th intercostal space, midclavicular line) — bell"
     critical: false
 
   - id: apical_pulse
@@ -307,6 +335,10 @@ steps:
     description: "Lower Extremities"
     section: true
 
+  - id: sani_feet
+    description: "hand sanitizer and **gloves** before feet (if you didn't put on fresh gloves earlier)"
+    critical: false
+
   - id: lower_skin_inspect
     description: "Inspect **skin characteristics**, **edema**, and **hair distribution** on legs"
     critical: false
@@ -327,6 +359,10 @@ steps:
     description: "Ask the client to show **active ROM** (Ask a probing question, e.g., Does this cause pain? Are you experiencing stiffness?)"
     critical: false
 
+  - id: gloves_off
+    description: "gloves off and sanitize hands after touching feet."
+    critical: false
+
   # ===== POST ASSESSMENT CARE =====
   - id: section_post
     description: "Post Assessment Care"
@@ -341,7 +377,7 @@ steps:
     critical: false
 
   - id: safety_measures
-    description: "Provide safety: **bed in lowest position**, side rails down, and **call light in reach**"
+    description: "Provide safety: **bed in lowest position**, **side rails up**, and **call light in reach**"
     critical: true
 
   - id: hand_hygiene_exit

@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 
+const GREEN = '\x1b[32m';
+const RED = '\x1b[31m';
+const NC = '\x1b[0m';
+
 const SKILLS_DIR = path.resolve('src/data/skills');
 const errors = [];
 
@@ -95,10 +99,10 @@ for (const file of files) {
 }
 
 if (errors.length > 0) {
-    console.error('Validation failed:\n');
-    errors.forEach(e => console.error(`  - ${e}`));
-    console.error(`\n${errors.length} error(s) found.`);
+    console.error(`${RED}Validation failed:${NC}\n`);
+    errors.forEach(e => console.error(`  ${RED}-${NC} ${e}`));
+    console.error(`\n${RED}${errors.length} error(s) found.${NC}`);
     process.exit(1);
 } else {
-    console.log('All skill files are valid.');
+    console.log(`${GREEN}All skill files are valid.${NC}`);
 }
