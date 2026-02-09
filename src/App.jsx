@@ -17,7 +17,7 @@ const RNSkillsApp = () => {
     const [currentView, setCurrentView] = React.useState('browser'); // 'browser' or 'about'
     const [skillsOrganization, setSkillsOrganization] = React.useState('number');
     const [lengthSortAscending, setLengthSortAscending] = React.useState(false);
-    const [expandedSkill, setExpandedSkill] = React.useState(null);
+    const [expandedSkill, setExpandedSkill] = React.useState(skillsData.skills.length === 1 ? skillsData.skills[0].id : null);
 
     // Individual skill practice mode hooks
     const [practiceMode, setPracticeMode] = React.useState(null);

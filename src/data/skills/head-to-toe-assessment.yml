@@ -193,12 +193,12 @@ steps:
     description: "Assess the anterior/posterior chest for symmetry, skin, and respiratory effort (Respiratory distress? Use of accessory muscles?)"
     critical: false
 
-  - id: breath_sounds_posterior
-    description: "Auscultate **posterior** breath sounds for full inspiration and expiration, comparing side to side in a **LADDER** formation, upper, middle, and lower lung fields. Demonstrate all **18 areas**. Note any adventitious sounds."
-    critical: false
-
   - id: breath_sounds_anterior
     description: "Auscultate **anterior** breath sounds for full inspiration and expiration, comparing side to side in a **LADDER** formation, upper, middle, and lower lung fields. Demonstrate all **10 areas**. Note any adventitious sounds."
+    critical: false
+
+  - id: breath_sounds_posterior
+    description: "Auscultate **posterior** breath sounds for full inspiration and expiration, comparing side to side in a **LADDER** formation, upper, middle, and lower lung fields. Demonstrate all **18 areas**. Note any adventitious sounds."
     critical: false
 
   - id: chest_probing_question
@@ -341,7 +341,7 @@ steps:
     critical: false
 
   - id: safety_measures
-    description: "Provide safety: **bed in lowest position**, **side rails up**, and **call light in reach**"
+    description: "Provide safety: **bed in lowest position**, side rails down, and **call light in reach**"
     critical: true
 
   - id: hand_hygiene_exit
