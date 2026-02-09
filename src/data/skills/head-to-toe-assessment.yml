@@ -22,7 +22,7 @@ steps:
 
   - id: hand_hygiene_entry
     description: "Perform hand hygiene: wash hands or foam-in"
-    critical: true
+    critical: false
 
   - id: tip_timer
     description: "The timer starts after hand hygiene is complete"
@@ -34,7 +34,7 @@ steps:
 
   - id: identify_patient
     description: "Identify the patient using 2 identifiers"
-    critical: true
+    critical: false
 
   - id: consent
     description: "\"I'm planning to perform a head-to-toe assessment on you. It can take up to 30 minutes. Is that ok with you?\""
@@ -267,7 +267,7 @@ steps:
 
   - id: apical_pulse
     description: "Auscultate the apical pulse rate at the mitral location while palpating the radial pulse. Perform this for a full minute, note any pulse deficit."
-    critical: true
+    critical: false
 
   - id: heart_probing_question
     description: "Ask **a probing question** (e.g., Have you been experiencing shortness of breath with exertion? Any chest pain? Are you easily fatigued?)"
@@ -378,8 +378,8 @@ steps:
 
   - id: safety_measures
     description: "Provide safety: **bed in lowest position**, **side rails up**, and **call light in reach**"
-    critical: true
+    critical: false
 
   - id: hand_hygiene_exit
     description: "Demonstrate **hand hygiene** when exiting the room"
-    critical: true
+    critical: false

@@ -7,6 +7,7 @@ import ClockIcon from '../data/icons/ClockIcon.jsx';
 import CheckIcon from '../data/icons/CheckIcon.jsx';
 import XIcon from '../data/icons/XIcon.jsx';
 import MinusIcon from '../data/icons/MinusIcon.jsx';
+import RotateIcon from '../data/icons/RotateIcon.jsx';
 
 const SkillsBrowserView = ({
     skillsOrganization,
@@ -142,6 +143,13 @@ const SkillsBrowserView = ({
                                             title={isPracticeRunning ? "Pause Timer" : "Start Timer"}
                                         >
                                             {isPracticeRunning ? <PauseIcon /> : <PlayIcon />}
+                                        </button>
+                                        <button
+                                            onClick={resetPractice}
+                                            className="p-2 rounded hover:bg-green-100 transition-colors"
+                                            title="Reset Timer"
+                                        >
+                                            <RotateIcon />
                                         </button>
                                         <ClockIcon />
                                         <span className="text-lg font-mono font-bold text-green-800">
